@@ -1,0 +1,12 @@
+com.example.deliveryapp-jetified-window-java-1.0.0-beta04-0 C:\Users\rohan\.gradle\caches\transforms-3\006d93cd422dbc43e89591147c2de572\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.deliveryapp-core-1.6.0-1 C:\Users\rohan\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0\res
+com.example.deliveryapp-jetified-annotation-experimental-1.1.0-2 C:\Users\rohan\.gradle\caches\transforms-3\8965c941cf4bee4d72541b965c7c9d39\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.deliveryapp-jetified-window-1.0.0-beta04-3 C:\Users\rohan\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\res
+com.example.deliveryapp-debug-4 C:\Users\rohan\OneDrive\Desktop\Freshdrop-Delivery-boy-application\deliveryapp\android\app\src\debug\res
+com.example.deliveryapp-main-5 C:\Users\rohan\OneDrive\Desktop\Freshdrop-Delivery-boy-application\deliveryapp\android\app\src\main\res
+com.example.deliveryapp-pngs-6 C:\Users\rohan\OneDrive\Desktop\Freshdrop-Delivery-boy-application\deliveryapp\build\app\generated\res\pngs\debug
+com.example.deliveryapp-resValues-7 C:\Users\rohan\OneDrive\Desktop\Freshdrop-Delivery-boy-application\deliveryapp\build\app\generated\res\resValues\debug
+com.example.deliveryapp-rs-8 C:\Users\rohan\OneDrive\Desktop\Freshdrop-Delivery-boy-application\deliveryapp\build\app\generated\res\rs\debug
+com.example.deliveryapp-mergeDebugResources-9 C:\Users\rohan\OneDrive\Desktop\Freshdrop-Delivery-boy-application\deliveryapp\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.deliveryapp-mergeDebugResources-10 C:\Users\rohan\OneDrive\Desktop\Freshdrop-Delivery-boy-application\deliveryapp\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.deliveryapp-merged_res-11 C:\Users\rohan\OneDrive\Desktop\Freshdrop-Delivery-boy-application\deliveryapp\build\app\intermediates\merged_res\debug
