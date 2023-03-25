@@ -1,4 +1,7 @@
+import 'package:deliveryapp/HomeScreen.dart';
 import 'package:deliveryapp/LoginPage.dart';
+import 'package:deliveryapp/SplashScreen.dart';
+import 'package:deliveryapp/noInternet.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,11 +15,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/home': (context) => HomePage(),
+        '/Login': (context) => LoginPage(),
+        '/noInternet': (context) => NoInternet(),
+      },
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      home: SplashScreen(),
     );
   }
 }

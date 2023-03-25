@@ -289,7 +289,7 @@
             "outputFile": "com.example.deliveryapp-merged_res-11:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\rohan\\OneDrive\\Desktop\\Freshdrop-Delivery-boy-application\\deliveryapp\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\rohan\\OneDrive\\Desktop\\freshdrop delivery\\Freshdrop-Delivery-boy-application\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -1293,7 +1293,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\rohan\\OneDrive\\Desktop\\Freshdrop-Delivery-boy-application\\deliveryapp\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\rohan\\OneDrive\\Desktop\\freshdrop delivery\\Freshdrop-Delivery-boy-application\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

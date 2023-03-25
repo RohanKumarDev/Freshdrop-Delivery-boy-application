@@ -1,4 +1,11 @@
+// ignore_for_file: use_build_context_synchronously, prefer_const_constructors
+
+import 'dart:convert';
+
+import 'package:deliveryapp/HomeScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -7,8 +14,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
-  String _email = '';
-  String _password = '';
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,24 +34,26 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height: 16),
               TextFormField(
+                controller: _emailController,
                 decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   labelText: 'Email',
                 ),
                 keyboardType: TextInputType.emailAddress,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter your email';
-                  }
-                  return null;
-                },
+                validator: (value) {},
                 onSaved: (value) {
-                  _email = value!;
+                  _emailController.text = value!;
                 },
               ),
               SizedBox(height: 16),
               TextFormField(
+                controller: _passwordController,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   labelText: 'Password',
                 ),
                 obscureText: true,
@@ -55,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
                 onSaved: (value) {
-                  _password = value!;
+                  _passwordController.text = value!;
                 },
               ),
               SizedBox(height: 16),
@@ -65,6 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
                     // Perform login logic here
+                    _login();
                   }
                 },
               ),
@@ -73,5 +83,60 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  Future<void> _login() async {
+    final email = _emailController.text.trim();
+    final password = _passwordController.text.trim();
+
+    if (email.isEmpty || password.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Email or password cannot be empty.'),
+        ),
+      );
+      return;
+    }
+
+    final response = await _makeLoginRequest(email, password);
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body)['data'];
+      final token = data['token'];
+      final prefs = await SharedPreferences.getInstance();
+      prefs.setString('token', token);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Login Successful'),
+        ),
+      );
+      await Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Invalid email or password'),
+        ),
+      );
+    }
+    print(response.body);
+  }
+
+  Future<http.Response> _makeLoginRequest(String email, String password) async {
+    try {
+      final response = await http.post(
+        Uri.parse('https://api.hostspica.com/employee/login'),
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode({'email': email, 'password': password}),
+      );
+      return response;
+    } catch (e) {
+      print('Error: $e');
+      rethrow;
+    }
   }
 }
