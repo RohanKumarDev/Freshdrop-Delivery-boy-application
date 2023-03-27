@@ -1,4 +1,4 @@
-// ignore_for_file: use_build_context_synchronously, prefer_const_constructors
+// ignore_for_file: use_build_context_synchronously, prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, prefer_final_fields, file_names, body_might_complete_normally_nullable, avoid_print
 
 import 'dart:convert';
 
@@ -131,7 +131,9 @@ class _LoginPageState extends State<LoginPage> {
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
         },
-        body: jsonEncode({'email': email, 'password': password}),
+        body: jsonEncode(
+          {'email': email, 'password': password},
+        ),
       );
       return response;
     } catch (e) {

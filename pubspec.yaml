@@ -39,6 +39,8 @@ dependencies:
   shared_preferences: ^2.0.20
   connectivity: ^3.0.6
   connectivity_plus: ^3.0.3
+  google_nav_bar: ^5.0.6
+  line_icons: ^2.0.1
 
 dev_dependencies:
   flutter_test:
