@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:deliveryapp/HomeScreen.dart';
 import 'package:deliveryapp/LoginPage.dart';
 import 'package:deliveryapp/SplashScreen.dart';
@@ -15,10 +17,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       routes: {
         '/home': (context) => HomePage(),
         '/Login': (context) => LoginPage(),
         '/noInternet': (context) => NoInternet(),
+        '/splash': (context) => SplashScreen(),
       },
       title: 'Flutter Demo',
       theme: ThemeData(
